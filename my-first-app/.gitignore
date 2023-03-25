@@ -1,0 +1,17 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Node
+/node_modules
+
+# Miscellaneous
+/.angular/cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+/typings
