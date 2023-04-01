@@ -31,7 +31,7 @@ import { AuthGuard } from './auth-guard.service';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [ServersService, AuthService, AuthGuard],
+  providers: [ServersService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
