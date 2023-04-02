@@ -3,13 +3,19 @@ import { Component, OnInit } from '@angular/core';
 import { ServersService } from '../servers.service';
 import { ActivatedRoute, Data, Params, Router } from '@angular/router';
 
+export interface Server {
+  id: number;
+  name: string;
+  status: string;
+}
+
 @Component({
   selector: 'app-server',
   templateUrl: './server.component.html',
   styleUrls: ['./server.component.css']
 })
 export class ServerComponent implements OnInit {
-  server: {id: number, name: string, status: string};
+  server: Server;
 
   constructor(private serversService: ServersService, private route: ActivatedRoute, private router: Router) { }
 
