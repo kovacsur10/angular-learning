@@ -1,16 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ServersService } from '../servers.service';
-import { ActivatedRoute, Params, Router, UrlTree } from '@angular/router';
-import { CanComponentDeactivate } from './can-deactivete-guard.service';
-import { Observable } from 'rxjs';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-server',
   templateUrl: './edit-server.component.html',
   styleUrls: ['./edit-server.component.css']
 })
-export class EditServerComponent implements OnInit, CanComponentDeactivate {
+export class EditServerComponent implements OnInit {
   server: {id: number, name: string, status: string};
   serverName = '';
   serverStatus = '';
@@ -37,10 +35,10 @@ export class EditServerComponent implements OnInit, CanComponentDeactivate {
   onUpdateServer() {
     this.serversService.updateServer(this.server.id, {name: this.serverName, status: this.serverStatus});
     this.changesSaved = true;
-    this.router.navigate(['../', {relativeTo: this.route}]);
+    this.router.navigate(['../'], {relativeTo: this.route});
   }
 
-  canDeactive() {
+  canDeactivate() {
     if(!this.allowEdit) {
       return true;
     }
